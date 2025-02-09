@@ -11,6 +11,8 @@
   "dependencies": {
     "@zoom/meetingsdk": "^3.11.2",
     "jsrsasign": "^11.1.0",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.0",
     "next": "15.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
