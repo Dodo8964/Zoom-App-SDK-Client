@@ -27,7 +27,6 @@ export default async function handler(
   }
 
   try {
-    // Check if a client with the email already exists.
     const clientExists = await Client.findOne({ email });
     if (clientExists) {
       return res.status(400).json({ error: 'Email already registered' });
@@ -37,7 +36,7 @@ export default async function handler(
       name,
       email,
       phone,
-      password, // In production, always hash your passwords!
+      password, 
       sourceLanguage,
       targetLanguage,
     });

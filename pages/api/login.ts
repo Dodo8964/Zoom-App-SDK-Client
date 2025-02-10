@@ -28,7 +28,6 @@ export default async function handler(
   }
 
   try {
-    // Note: For real apps, compare hashed passwords.
     const client = await Client.findOne({ email, password });
     if (client) {
       res.status(200).json({ message: 'Login successful', client });

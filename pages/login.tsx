@@ -9,7 +9,6 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  // Optionally, show a success message passed via query parameter (e.g., after registration)
   useEffect(() => {
     if (router.query.success) {
       setSuccess(router.query.success as string);
@@ -27,10 +26,8 @@ export default function Login() {
       });
       const data = await res.json();
       if (res.ok) {
-        // For simplicity, store the client info in localStorage.
         localStorage.setItem('client', JSON.stringify(data.client));
-        // Redirect to the meeting join form.
-        router.push('/join');
+        router.push('/dashboard');
       } else {
         setError(data.error || 'Login failed');
       }
